@@ -75,6 +75,7 @@
 </template>
 
 <script>
+/* eslint-disable no-console */
 import { mapState, mapActions } from "vuex";
 export default {
   data() {

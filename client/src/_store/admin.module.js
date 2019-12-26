@@ -17,22 +17,24 @@ const actions = {
     try {
       let listSubjects = await adminService.getAllSubjects();
       commit('getAllSubjects', listSubjects);
+      return true;
     } catch (error) {
-      console.log(error);
       if (error.response.status === 403) {
         router.push('/403');
       }
+      return false;
     }
   },
   async createSubject({ commit }, subject) {
     try {
       let listSubjects = await adminService.createSubject(subject);
       commit('createSubject', listSubjects);
+      return true;
     } catch (error) {
-      console.log(error);
       if (error.response.status === 403) {
         router.push('/403');
       }
+      return false;
     }
   },
   async updateSubject({ commit }, subject) {
@@ -40,7 +42,6 @@ const actions = {
       let listSubjects = await adminService.updateSubject(subject);
       commit('updateSubject', listSubjects);
     } catch (error) {
-      console.log(error);
       if (error.response.status === 403) {
         router.push('/403');
       }
@@ -51,7 +52,6 @@ const actions = {
       let listSubjects = await adminService.deleteSubject(subject);
       commit('deleteSubject', listSubjects);
     } catch (error) {
-      console.log(error);
       if (error.response.status === 403) {
         router.push('/403');
       }
@@ -64,7 +64,6 @@ const actions = {
       let listStudents = await adminService.getStudentsOfSubject(subjectId);
       commit('getStudentsOfSubject', listStudents);
     } catch (error) {
-      console.log(error);
       if (error.response.status === 403) {
         router.push('/403');
       }
@@ -75,7 +74,6 @@ const actions = {
       let listSubjects = await adminService.deleteStudentOfSubject(subjectId, Username);
       commit('deleteStudentOfSubject', listSubjects);
     } catch (error) {
-      console.log(error);
       if (error.response.status === 403) {
         router.push('/403');
       }
@@ -88,7 +86,6 @@ const actions = {
       let listTeachers = await adminService.getAllTeachers();
       commit('getAllTeachers', listTeachers);
     } catch (error) {
-      console.log(error);
       if (error.response.status === 403) {
         router.push('/403');
       }
@@ -112,7 +109,6 @@ const actions = {
       let listTeachers = await adminService.deleteTeacher(teacher);
       commit('deleteTeacher', listTeachers);
     } catch (error) {
-      console.log(error);
       if (error.response.status === 403) {
         router.push('/403');
       }
@@ -125,7 +121,6 @@ const actions = {
       let listSubjects = await adminService.getSubjectsOfTeacher(Username);
       commit('getSubjectsOfTeacher', listSubjects);
     } catch (error) {
-      console.log(error);
       if (error.response.status === 403) {
         router.push('/403');
       }
@@ -136,7 +131,6 @@ const actions = {
       let listSubjects = await adminService.deleteSubjectOfTeacher(Username, subjectId);
       commit('deleteSubjectOfTeacher', listSubjects);
     } catch (error) {
-      console.log(error);
       if (error.response.status === 403) {
         router.push('/403');
       }
@@ -144,12 +138,11 @@ const actions = {
   },
   async addSubjectOfTeacher({ commit }, { username, subjectId }) {
     try {
-      console.log(username, subjectId);
+      // console.log(username, subjectId);
       let listSubjects = await adminService.addSubjectOfTeacher(username, subjectId);
       commit('addSubjectOfTeacher', listSubjects);
       location.reload(true);
     } catch (error) {
-      console.log(error);
       if (error.response.status === 403) {
         router.push('/403');
       }
@@ -160,7 +153,6 @@ const actions = {
       let listSubjects = await adminService.getSubjectsNoTeacher();
       commit('getSubjectsNoTeacher', listSubjects);
     } catch (error) {
-      console.log(error);
       if (error.response.status === 403) {
         router.push('/403');
       }
@@ -171,10 +163,8 @@ const actions = {
   async getAllStudents({ commit }) {
     try {
       let listStudents = await adminService.getAllStudents();
-      console.log(listStudents);
       commit('getAllStudents', listStudents);
     } catch (error) {
-      console.log(error);
       if (error.response.status === 403) {
         router.push('/403');
       }
@@ -187,7 +177,6 @@ const actions = {
       let listSubjects = await adminService.getSubjectsOfStudent(Username);
       commit('getSubjectsOfStudent', listSubjects);
     } catch (error) {
-      console.log(error);
       if (error.response.status === 403) {
         router.push('/403');
       }

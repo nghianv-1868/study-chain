@@ -84,7 +84,7 @@
               <h6>Fullname:</h6>
             </div>
             <div class="col-8 text-left">
-              <h5>{{student.Fullname}}</h5>
+              <h5>{{ student.Fullname }}</h5>
             </div>
           </div>
         </b-form-group>
@@ -94,7 +94,7 @@
               <h6>Username:</h6>
             </div>
             <div class="col-8 text-left">
-              <h5>{{student.Username}}</h5>
+              <h5>{{ student.Username }}</h5>
             </div>
           </div>
         </b-form-group>

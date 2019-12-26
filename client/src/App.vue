@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import { mapState, mapActions } from "vuex";
+import { mapActions } from "vuex";
 
 export default {
   name: "app",
@@ -15,7 +15,7 @@ export default {
     })
   },
   watch: {
-    $route(to, from) {
+    $route() {
       this.clearAlert();
     }
   }

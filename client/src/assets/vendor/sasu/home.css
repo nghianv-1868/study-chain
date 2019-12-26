@@ -189,6 +189,52 @@ ul.social-network li {
   background-color: #f9f9f9;
 }
 
+.el-table thead {
+  color: #212529 !important;
+  font-weight: 500;
+}
+
+.box-defaul-header {
+  height: 20px;
+  width: 40px;
+}
+
+@media (max-width: 480px) {
+  .el-pagination > .el-pagination__total {
+    display: block !important;
+    float: left;
+    line-height: 30px !important;
+  }
+  .el-pagination > .el-pagination__sizes {
+    display: block !important;
+    float: left;
+    clear: right;
+    margin-bottom: 2em;
+  }
+  .el-pagination > button.btn-prev {
+    clear: left;
+    display: block !important;
+    float: left;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .el-pagination > ul.el-pager {
+    display: block !important;
+    float: left;
+  }
+  .el-pagination > button.btn-next {
+    display: block !important;
+    float: left;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .el-pagination > span.el-pagination__jump {
+    display: block !important;
+    float: left;
+    margin-left: 0;
+  }
+}
+
 @media (max-width: 768px) {
   .table-responsive {
     overflow-x: auto;

@@ -228,7 +228,7 @@ export default {
       this.teacher.Username = item.Username;
       this.$root.$emit("bv::show::modal", this.infoModal.id, button);
     },
-    async handleCreate(bvModalEvt) {
+    async handleCreate() {
       await this.createTeacher(this.newTeacher);
       if (this.alert.type != "alert-danger") {
         this.$refs["modal-create"].hide();
